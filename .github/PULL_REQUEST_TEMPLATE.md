@@ -1,19 +1,14 @@
-## Overview
-
-<!--
-One to two sentence description of the issue you are encountering or trying to solve.
-
-Link to related issue. Type `closes #RELATED_ISSUE_NUMBER` to establish a link.
--->
-
-## Questions
-
-<!-- If relevant, write a list of questions that you would like to discuss related to the changes that you have made. -->
-
-## Next steps
-
-<!-- If incomplete, create a task list of items that are still being worked on within the Pull Request. -->
-
-## Review
-
-<!-- If complete, or ready for :eyes:, use @mentions for quick questions, specific feedback, and progress updates. -->
+Overview
+​<!-- Descripción breve de la asimilación o corrección. -->
+<!-- Vincula el issue relacionado usando `closes #NÚMERO_DE_ISSUE`. -->
+​Auditoría de Soberanía (NUEVO)
+​<!-- Marque para confirmar que la asimilación cumple con los protocolos: -->
+​[ ] Sin Telemetría: Verificado que no se inyectaron proveedores de analítica.
+​[ ] Jerarquía de Claves: Prioridad de GEMINI_API_KEY confirmada en el código.
+​[ ] Blindaje: El cambio no altera las reglas de CENTINEL o Vale.
+​Questions
+​<!-- Listado de preguntas técnicas sobre los cambios para el equipo de agentes. -->
+​Next steps
+​<!-- Lista de tareas pendientes o procesos de validación de seguridad. -->
+​Review
+​<!-- Uso de @mentions para validación humana o de agentes supervisores. -->
