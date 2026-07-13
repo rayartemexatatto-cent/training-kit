@@ -1,39 +1,21 @@
-## Overview
-
-<!-- One to two sentence description of the issue you are encountering or trying to solve. -->
-
-### Extra detail
-
-<!-- Please include any additional details that may be helpful in understanding the issue. -->
-#### Screenshots
-
-<!-- If bug fix, please upload images of the error to better showcase the problem. -->
-
-#### Reasoning
-
-<!-- If new idea or direction, please create a checklist of proposed ideas or next steps. [Example](https://github.com/github/training-kit/issues/415). -->
-
-### How to contribute
-
-- Comment on this issue if you'd like to work/collaborate on it!
-- Fork the [repository](https://github.com/github/training-kit).
-- Use the [GitHub Flow](https://guides.github.com/introduction/flow/) to make changes to your fork. [This](https://github.com/skills/introduction-to-github) is a refresher course if you're unsure about how to make a change on GitHub.
-- Push your changes to your repository.
-- Submit a Pull Request
-  - Base Dropdown: github/training-kit
-  - Compare Dropdown: Your fork
-
-#### Testing locally
-
-If you'd like to make and test changes locally (and see how they would look if merged), do the following:
-
-- In your command line:
-  - [Install Git](https://git-scm.com/)
-  - [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
-  - [ ] Run `script/setup`
-  - [ ] Run `script/server`.
-    - When successful, the script will initiate a local server at `http://127.0.0.1:4000/`.
-
-### Questions?
-
-- Leave a comment on this issue! Make sure to use `@mentions` if you want a specific person's attention!
+​Overview
+​Problema: Identificación y erradicación de vectores de telemetría no autorizados y servicios de ejecución no documentados (guion/, server/) dentro del kit de entrenamiento.
+Objetivo: Restaurar la integridad del Nodo Soberano eliminando el rastreo externo y protegiendo los datos del usuario.
+​Extra detail
+​Se ha detectado una estructura oculta en _incluye/analytics-providers/ que inyecta scripts de rastreo de terceros, así como una capa de ejecución (guion/) que no corresponde a un repositorio de documentación. Estas puertas traseras fueron identificadas como vectores de rapto de datos en Cloud Shell y consola.
+​Screenshots
+​(Sube aquí la captura de la estructura de archivos que identificaste: analytics-providers, guion, server)
+​Reasoning
+​[x] Paso 1: Auditoría forense - Mapeo de archivos de telemetría.
+​[x] Paso 2: Neutralización - Vaciar google.html y analytics.html.
+​[x] Paso 3: Desmantelamiento - Mover guion/ y server/ a cuarentena local.
+​[x] Paso 4: Blindaje - Aplicar el protocolo CENTINEL y reglas de inmutabilidad en el repositorio.
+​[ ] Paso 5: Verificación - Confirmar que el CI/CD ya no carga scripts externos.
+​How to contribute
+​Protocolo de soberanía: Toda contribución debe respetar la inmutabilidad de los archivos de configuración (_config.yml).
+​No se aceptarán PRs que incluyan servicios de analítica, telemetría o infraestructura de ejecución no autorizada.
+​Las contribuciones deben pasar el estándar de linting definido en .vale.ini.
+​Testing locally
+​Para validar que el Nodo esté limpio:
+​[ ] Ejecutar script/setup.
+​[ ] Verificar que no existan peticiones salientes a dominios de rastreo mediante script/server.
