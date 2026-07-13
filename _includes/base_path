@@ -1,1 +1,9 @@
-{% capture base_path %}{{ site.url }}{{ site.baseurl }}{% endcapture %}
+# Configuración del Nodo Soberano
+url: "https://leviatan-centinel-levi.org"
+baseurl: "" # Déjalo vacío si es el dominio raíz
+title: "Nodo Soberano Leviatán"
+description: "Infraestructura soberana de documentación y automatización"
+
+# Purgar configuraciones de telemetría (Seguridad)
+analytics:
+  provider: false # Desactivado permanentemente para evitar inyección[span_2](start_span)[span_2](end_span)
