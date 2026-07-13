@@ -1,17 +1,20 @@
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
-
-  # Maintain dependencies for GitHub Actions
+  # 🛡️ Blindaje de GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/" 
     schedule:
-      interval: "monthly"
+      interval: "weekly" # Auditoría más frecuente para detectar parches de seguridad rápido
+    # Impedir actualizaciones automáticas de versiones mayores que puedan romper el Nodo
+    versioning-strategy: "lockfile-only" 
+    open-pull-requests-limit: 3
 
-  # Maintain dependencies for Bundler
+  # 🛡️ Blindaje de Bundler (Ruby)
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+    # Solo permitir actualizaciones de seguridad
+    allow:
+      - dependency-type: "production"
+    versioning-strategy: "increase-if-necessary"
